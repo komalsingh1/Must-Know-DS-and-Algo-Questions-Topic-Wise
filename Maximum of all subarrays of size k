@@ -1,0 +1,29 @@
+//Given an array A and an integer K. Find the maximum for each and every contiguous subarray of size K.
+Expected solution in O(n)
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+ {
+	int t;
+     cin>>t;
+     while(t--)
+     {
+         int n,i,k,max;
+         cin>>n>>k;
+         int a[n];
+         for(i=0;i<n;i++)
+         cin>>a[i];
+         for(i=0;i<n-k+1;i++)
+         {
+             max=a[i];
+             for(int j=0;j<k;j++)
+             {
+                 if(a[i+j]>max)
+                 max=a[i+j];
+             }
+             cout<<max<<" ";
+         }
+         cout<<endl;
+     }
+	return 0;
+}
